@@ -1,0 +1,68 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1140px;
+  width: 100%;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background: linear-gradient(to right, $start-color, $end-color);
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin grid-container($columns: auto, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-item($row: auto, $column: auto, $row-span: 1, $column-span: 1) {
+  grid-row: $row;
+  grid-column: $column;
+  grid-row-end: span $row-span;
+  grid-column-end: span $column-span;
+}
+
+@mixin grid-row($row-gap: 1rem) {
+  display: grid;
+  grid-row-gap: $row-gap;
+}
+
+@mixin grid-column($column-gap: 1rem) {
+  display: grid;
+  grid-column-gap: $column-gap;
+}
