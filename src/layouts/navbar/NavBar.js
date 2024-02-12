@@ -12,7 +12,7 @@ const menu = [
 
 const NavBar = () => {
   return (
-    <div className="container">
+    <div className="navbar-container">
       <div className="content-wrapper">
         <div className="logo">
           <img src={logo} alt="logo" />

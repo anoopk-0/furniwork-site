@@ -1,31 +1,30 @@
-.container {
+.navbar-container {
   border-bottom: 1px solid $secondary-color;
-}
-
-.content-wrapper {
-  @include container;
-  @include flex-center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.menu {
-  ul {
+  .content-wrapper {
+    @include container;
     @include flex-center;
-    gap: 1.5rem;
-    font-weight: 700;
-    font-size: $large-font-size;
+    justify-content: space-between;
+    padding: 1rem 0;
   }
-}
 
-.search-bar {
-  border: 1px solid $secondary-color;
-  border-radius: 5px;
+  .menu {
+    ul {
+      @include flex-center;
+      gap: 1.5rem;
+      font-weight: 700;
+      font-size: $large-font-size;
+    }
+  }
 
-  input {
-    height: 30px;
-    outline: none;
-    padding: 2px 12px;
-    font-size: $base-font-size;
+  .search-bar {
+    border: 1px solid $secondary-color;
+    border-radius: 5px;
+
+    input {
+      height: 30px;
+      outline: none;
+      padding: 2px 12px;
+      font-size: $base-font-size;
+    }
   }
 }

@@ -1,0 +1,31 @@
+.card-container {
+  @include flex-container;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .card-image {
+    width: 450px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .card-content {
+    div {
+      @include flex-center;
+      justify-content: start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      h4 {
+        margin: 0;
+      }
+    }
+
+    p {
+      color: $third-color;
+      font-weight: lighter;
+      letter-spacing: 0.5px;
+      font-family: "Roboto-light";
+    }
+  }
+}

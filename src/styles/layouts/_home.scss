@@ -1,1 +1,88 @@
+.home-container {
+  .hero-container {
+    position: relative;
+    .home-hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(0%, 0%);
+      color: $light-color;
 
+      h1 {
+        font-size: 4rem;
+      }
+
+      h2 {
+        letter-spacing: 0.2px;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .home-carousel {
+    @include flex-container;
+    padding: 4rem 3rem;
+    overflow-x: scroll; /* Enable horizontal scrolling if content overflows horizontally */
+    gap: 4rem;
+    background-color: $bg-gary-01;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      /* Set the width of the scrollbar */
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Set the background color of the track */
+    }
+    &::-webkit-scrollbar-thumb {
+      background: red;
+      height: 15px; /* Set the color of the thumb */
+    }
+
+    img {
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        transform: scale(1.5); // Zoom-in effect on hover
+        z-index: 1; // Ensure the hovered image is on top
+      }
+    }
+
+    img:not(:hover) {
+      z-index: 0; // Ensure non-hovered images are below the hovered image
+    }
+  }
+
+  .home-typography {
+    @include flex-container;
+
+    .container-typography {
+      @include container-md;
+      @include flex-center;
+      padding: 10rem;
+
+      h1 {
+        font-size: 4.5rem;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        padding: 5rem;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

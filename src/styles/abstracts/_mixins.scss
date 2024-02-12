@@ -13,6 +13,15 @@
   width: 100%;
 }
 
+@mixin container-md {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1240px;
+  width: 100%;
+}
+
 @mixin clearfix {
   &::after {
     content: "";
