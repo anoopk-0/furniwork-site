@@ -1,4 +1,19 @@
-// Default font sizes
+//* Default font sizes */
+@font-face {
+  font-family: "Roboto";
+  src: url("../../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype"),
+    url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-light";
+  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
+    url("../../assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $base-font-size: 16px;
 $small-font-size: 0.875rem; // 14px
@@ -14,11 +29,12 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-// Typography styles
+/* Typography styles */
 body {
-  font-family: "Arial", sans-serif;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-family: "Roboto-light", "Roboto", sans-serif;
+  /* Provide fallback font families */
+  font-size: $base-font-size; /* Assuming $base-font-size is defined elsewhere */
+  line-height: $base-line-height; /* Assuming $base-line-height is defined elsewhere */
 }
 
 h1,

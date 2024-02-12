@@ -2,3 +2,9 @@
 @import "abstracts/variables"; // Correct relative path to mixins.scss
 @import "base/reset"; // Correct relative path to reset.scss
 @import "base/typography"; // Correct relative path to typography.scss
+
+//components
+@import "components/image-hero";
+
+@import "layouts/navbar";
+@import "layouts/home";

@@ -1,0 +1,45 @@
+.hero-img {
+  /* For Extra Small devices (phones) and up */
+  @media (min-width: $breakpoint-xs) {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /* For Small devices (phones, 576px) and up */
+  @media (min-width: $breakpoint-sm) {
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* For Medium devices (tablets, 768px) and up */
+  @media (min-width: $breakpoint-md) {
+    img {
+      height: 300px; /* Adjust height as needed */
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* For Large devices (desktops, 992px) and up */
+  @media (min-width: $breakpoint-lg) {
+    img {
+      height: 400px; /* Adjust height as needed */
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* For Extra Large devices (large desktops, 1200px) and up */
+  @media (min-width: $breakpoint-xl) {
+    img {
+      height: auto; /* Adjust height as needed */
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
