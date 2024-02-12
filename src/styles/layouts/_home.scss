@@ -70,6 +70,7 @@
     .container-typography {
       @include container-md;
       @include flex-center;
+      flex-direction: column;
       padding: 10rem;
 
       h1 {
@@ -77,11 +78,100 @@
         text-align: center;
       }
 
+      hr {
+        background: red;
+        border: 1px solid $third-color;
+        width: 20%;
+        margin-top: 4rem;
+      }
+
       @media (max-width: $breakpoint-md) {
         padding: 5rem;
         h1 {
           font-size: 2rem;
         }
+      }
+    }
+  }
+
+  .home-section-image {
+    @include grid-container($columns: 2, $gap: 0);
+  }
+
+  .home-setting-purpose {
+    @include container;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 0;
+
+    .purpose-heading {
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .purpose-heading-content {
+      @include grid-container($columns: 2, $gap: 1rem);
+
+      .card-image {
+        width: 100%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .explore-product {
+    @include container;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 0;
+
+    .explore-heading {
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    .explore-content {
+      @include grid-container($columns: 4, $gap: 2rem);
+
+      .product-wrapper {
+        position: relative;
+
+        h3 {
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+          transform: translate(-50%, 50%);
+
+          &:nth-child(1) {
+            color: $light-color;
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        @include grid-container($columns: 1, $gap: 2);
       }
     }
   }

@@ -7,6 +7,11 @@ import image5 from "../../assets/images/ig_home_millerknoll_20210720.jpg";
 import image6 from "../../assets/images/ig_home_future_of_work_20210609.jpg";
 import image7 from "../../assets/images/ig_home_chadwick_20210818.jpg";
 import image8 from "../../assets/images/ig_home_work_from_home_it_20200421_emea.jpg";
+import healthCare from "../../assets/images/healthcare.jpg";
+import seatImage from "../../assets/images/seating.jpg";
+import deskWorkImage from "../../assets/images/desk-work.jpg";
+import tableImage from "../../assets/images/table.jpg";
+import pStorage from "../../assets/images/p-storage.jpg";
 
 export const carouselItem = [
   {
@@ -52,5 +57,42 @@ export const carouselItem = [
     image: image8,
     title: "Make WFH Work For You",
     description: "Explore ideas for a great home office experience",
+  },
+];
+
+export const settingPurpose = [
+  {
+    title: "Business",
+    image: "",
+    description:
+      "Living Office is a high-performing workplace that delivers an elevated experience of work for people, and helps organizations achieve their strategic goals.",
+    subtitle: "See the Office Alive",
+  },
+
+  {
+    title: "Healthcare",
+    image: healthCare,
+    description:
+      "Our deep understanding of human dynamics and technology’s potential to improve how people deliver and receive care informs our products and settings for caregiver and patient.",
+    subtitle: "For Healthy Outcomes",
+  },
+];
+
+export const exploreProduct = [
+  {
+    title: "Seating",
+    image: seatImage,
+  },
+  {
+    title: "Desks and Workspaces",
+    image: deskWorkImage,
+  },
+  {
+    title: "Tables",
+    image: tableImage,
+  },
+  {
+    title: "Storage",
+    image: pStorage,
   },
 ];

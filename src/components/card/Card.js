@@ -1,18 +1,26 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
-const Card = ({ item }) => {
+const Card = ({ item: { title, image, description, subtitle } }) => {
   return (
     <div className="card-container">
-      <div className="card-image">
-        <img src={item.image} alt={""} />
-      </div>
+      {image && (
+        <div className="card-image">
+          <img src={image} alt={title} />
+        </div>
+      )}
       <div className="card-content">
         <div>
-          <h4>{item.title}</h4>
-          <FaArrowRight />
+          <h4>{title}</h4>
+          {!subtitle && <FaArrowRight />}
         </div>
-        <p>{item.description}</p>
+        <p>{description}</p>
+        {subtitle && (
+          <div>
+            <h4>{subtitle}</h4>
+            <FaArrowRight />
+          </div>
+        )}
       </div>
     </div>
   );

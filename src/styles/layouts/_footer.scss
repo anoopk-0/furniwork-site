@@ -1,0 +1,8 @@
+.footer-container {
+  background-color: $bg-gary-01;
+  .footer-wrapper {
+    @include container;
+    display: grid;
+    grid-template-columns: auto repeat(4, minmax(auto, max-width)) max-content;
+  }
+}

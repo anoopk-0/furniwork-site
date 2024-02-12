@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Home, NavBar } from "./layouts";
+import { Footer, Home, NavBar } from "./layouts";
 
 function App() {
   return (
@@ -10,6 +10,9 @@ function App() {
       <main>
         <Home />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
