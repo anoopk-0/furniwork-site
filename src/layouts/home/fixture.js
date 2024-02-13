@@ -1,17 +1,16 @@
-import image1 from "../../assets/images/ig_home_cyclade_table.jpg";
-import image2 from "../../assets/images/ig_home_passport_table_20230215.jpg";
-import image3 from "../../assets/images/ig_home_aeron_obp_20210901.jpg";
-
-import image4 from "../../assets/images/ig_home_obp_20210901.jpg";
-import image5 from "../../assets/images/ig_home_millerknoll_20210720.jpg";
-import image6 from "../../assets/images/ig_home_future_of_work_20210609.jpg";
-import image7 from "../../assets/images/ig_home_chadwick_20210818.jpg";
-import image8 from "../../assets/images/ig_home_work_from_home_it_20200421_emea.jpg";
-import healthCare from "../../assets/images/healthcare.jpg";
-import seatImage from "../../assets/images/seating.jpg";
 import deskWorkImage from "../../assets/images/desk-work.jpg";
-import tableImage from "../../assets/images/table.jpg";
+import healthCare from "../../assets/images/healthcare.jpg";
+import image3 from "../../assets/images/ig_home_aeron_obp_20210901.jpg";
+import image7 from "../../assets/images/ig_home_chadwick_20210818.jpg";
+import image1 from "../../assets/images/ig_home_cyclade_table.jpg";
+import image6 from "../../assets/images/ig_home_future_of_work_20210609.jpg";
+import image5 from "../../assets/images/ig_home_millerknoll_20210720.jpg";
+import image4 from "../../assets/images/ig_home_obp_20210901.jpg";
+import image2 from "../../assets/images/ig_home_passport_table_20230215.jpg";
+import image8 from "../../assets/images/ig_home_work_from_home_it_20200421_emea.jpg";
 import pStorage from "../../assets/images/p-storage.jpg";
+import seatImage from "../../assets/images/seating.jpg";
+import tableImage from "../../assets/images/table.jpg";
 
 export const carouselItem = [
   {

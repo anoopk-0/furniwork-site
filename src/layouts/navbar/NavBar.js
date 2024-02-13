@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from "../../assets/images/logo.svg";
-import { CiSearch } from "react-icons/ci";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
+import { CiSearch } from "react-icons/ci";
+import logo from "../../assets/images/logo.svg";
 
 const menu = [
   "Products",

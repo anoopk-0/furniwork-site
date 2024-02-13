@@ -1,6 +1,5 @@
 import React from "react";
 import footerLogo from "../../assets/images/hm-logo-gray.svg";
-import { footerData } from "./fixture";
 
 const Footer = () => {
   return (

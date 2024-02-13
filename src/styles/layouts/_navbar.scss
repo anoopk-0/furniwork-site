@@ -1,5 +1,6 @@
 .navbar-container {
   border-bottom: 1px solid $secondary-color;
+
   .content-wrapper {
     @include container;
     @include flex-center;
@@ -75,7 +76,7 @@
   z-index: 999;
   height: 100vh;
   bottom: 0;
-  background: #f0f0f0; /* Set your background color */
+  background: #f0f0f0;
   width: 50%;
   transition: transform 0.5s ease;
   transform: translateX(100%);

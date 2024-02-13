@@ -34,20 +34,19 @@
   .home-carousel {
     @include flex-container;
     padding: 4rem 3rem;
-    overflow-x: scroll; /* Enable horizontal scrolling if content overflows horizontally */
+    overflow-x: scroll;
     gap: 4rem;
     background-color: $bg-gary-01;
 
     &::-webkit-scrollbar {
       width: 10px;
-      /* Set the width of the scrollbar */
     }
     &::-webkit-scrollbar-track {
-      background: #f1f1f1; /* Set the background color of the track */
+      background: #f1f1f1;
     }
     &::-webkit-scrollbar-thumb {
       background: red;
-      height: 15px; /* Set the color of the thumb */
+      height: 15px;
     }
 
     img {
@@ -56,13 +55,13 @@
       height: 100%;
 
       &:hover {
-        transform: scale(1.5); // Zoom-in effect on hover
-        z-index: 1; // Ensure the hovered image is on top
+        transform: scale(1.5);
+        z-index: 1;
       }
     }
 
     img:not(:hover) {
-      z-index: 0; // Ensure non-hovered images are below the hovered image
+      z-index: 0;
     }
   }
 
@@ -136,8 +135,8 @@
 
   .explore-product {
     @include container;
-    @include flex-center;
-    flex-direction: column;
+    // @include flex-center;
+    // flex-direction: column;
     gap: 1rem;
     padding: 3rem 0;
 
@@ -158,22 +157,16 @@
       @include grid-container($columns: 4, $gap: 2rem);
 
       .product-wrapper {
-        position: relative;
-
-        h3 {
-          position: absolute;
-          bottom: 10%;
-          left: 50%;
-          transform: translate(-50%, 50%);
-
-          &:nth-child(1) {
-            color: $light-color;
-          }
-        }
+        text-align: center;
       }
 
       @media (max-width: $breakpoint-md) {
         @include grid-container($columns: 1, $gap: 2);
+      }
+
+      @media (min-width: 1440px) and (max-width: 1919px) {
+        @include grid-container($columns: 2, $gap: 3rem);
+        justify-content: center;
       }
     }
     @media (min-width: 1440px) and (max-width: 1919px) {

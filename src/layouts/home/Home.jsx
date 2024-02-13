@@ -1,12 +1,12 @@
 import React from "react";
-import Logo from "../../assets/images/home-hero.jpg";
 import hero2 from "../../assets/images/home-hero-2.jpg";
+import Logo from "../../assets/images/home-hero.jpg";
 import firstImage from "../../assets/images/it_home_aug_01_in.jpg";
 import secondImage from "../../assets/images/it_home_aug_02_in.jpg";
 
 import { Button, Card, HeroImage, Product } from "../../components";
 
-import { carouselItem, settingPurpose, exploreProduct } from "./fixture";
+import { carouselItem, exploreProduct, settingPurpose } from "./fixture";
 
 const Home = () => {
   return (
