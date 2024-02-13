@@ -1,16 +1,20 @@
-name: CI/CD Pipeline
+name: CI
 
 on:
   push:
     branches:
-      - master
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
+    name: Test, Lint, and Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
@@ -24,12 +28,8 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Lint code
+        run: npm run lint
+
       - name: Build
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: build
