@@ -58,8 +58,8 @@ const Home = () => {
               </p>
             </div>
             <div className="purpose-heading-content">
-              {settingPurpose?.map((setting) => (
-                <Card item={setting} />
+              {settingPurpose?.map((setting, index) => (
+                <Card key={index} item={setting} />
               ))}
             </div>
           </div>
