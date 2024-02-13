@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import logo from "../../assets/images/logo.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const menu = [
-  "Products",
-  "Solutions",
-  "Resources",
-  "Knowledge",
-  "Stories",
-  "Work from Home",
+  { to: "/products", name: "Products" },
+  { to: "/solutions", name: "Solutions" },
+  { to: "/resources", name: "Resources" },
+  { to: "/knowledge", name: "Knowledge" },
+  { to: "/stories", name: "Stories" },
+  { to: "/work-from-home", name: "Work from Home" },
 ];
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -23,13 +25,15 @@ const NavBar = () => {
             <AiOutlineMenuUnfold />
           </div>
 
-          <div className="logo">
+          <div className="logo" onClick={() => navigate("/")}>
             <img src={logo} alt="logo" />
           </div>
           <div className="menu">
             <ul>
               {menu?.map((menuItem, index) => (
-                <li key={index}>{menuItem}</li>
+                <li key={index}>
+                  <Link to={menuItem.to}>{menuItem.name}</Link>
+                </li>
               ))}
             </ul>
           </div>

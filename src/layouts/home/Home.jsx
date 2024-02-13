@@ -74,7 +74,7 @@ const Home = () => {
             </div>
             <div className="explore-content">
               {exploreProduct.map((item, index) => (
-                <Product item={item} />
+                <Product item={item} key={index} />
               ))}
             </div>
           </div>
