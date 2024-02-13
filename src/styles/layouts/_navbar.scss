@@ -5,6 +5,27 @@
     @include flex-center;
     justify-content: space-between;
     padding: 1rem 0;
+
+    .md-menu {
+      display: none;
+    }
+
+    @media (max-width: 1439px) {
+      max-width: 1023px;
+      padding: 0.5rem 1rem;
+      .md-menu {
+        display: block;
+      }
+
+      svg {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    @media (min-width: 1440px) and (max-width: 1919px) {
+      max-width: 1250px;
+    }
   }
 
   .menu {
@@ -18,17 +39,56 @@
     @media (max-width: $breakpoint-md) {
       display: none;
     }
+
+    @media (min-width: 1440px) and (max-width: 1919px) {
+      font-size: 1rem;
+    }
   }
 
   .search-bar {
     border: 1px solid $secondary-color;
-    border-radius: 5px;
+    border-radius: 1px;
+    @include flex-container;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1rem;
 
     input {
-      height: 30px;
+      height: 1rem;
       outline: none;
-      padding: 2px 12px;
+      border: 0;
+      padding: 2px 6px;
       font-size: $base-font-size;
     }
+
+    @media (max-width: $breakpoint-md) {
+      border: none;
+      input {
+        display: none;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  bottom: 0;
+  background: #f0f0f0; /* Set your background color */
+  width: 50%;
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+}
+
+.mobile-menu.show {
+  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  gap: 2rem;
+
+  div {
+    cursor: pointer;
   }
 }

@@ -1,4 +1,9 @@
 // Normalize default styling across browsers
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 ul,

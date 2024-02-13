@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/images/logo.svg";
+import { CiSearch } from "react-icons/ci";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 
 const menu = [
   "Products",
@@ -11,24 +13,40 @@ const menu = [
 ];
 
 const NavBar = () => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="navbar-container">
-      <div className="content-wrapper">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="menu">
-          <ul>
-            {menu?.map((menuItem, index) => (
-              <li key={index}>{menuItem}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="search-bar">
-          <input type="text" placeholder="search" />
+    <>
+      <div className="navbar-container">
+        <div className="content-wrapper">
+          <div className="md-menu" onClick={() => setIsActive(!isActive)}>
+            <AiOutlineMenuUnfold />
+          </div>
+
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="menu">
+            <ul>
+              {menu?.map((menuItem, index) => (
+                <li key={index}>{menuItem}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="search-bar">
+            <CiSearch />
+            <input type="text" placeholder="search" />
+          </div>
         </div>
       </div>
-    </div>
+      {isActive && (
+        <div className={`mobile-menu ${isActive ? "show" : ""}`}>
+          {menu.map((menu) => (
+            <div className="menu-item">{menu}</div>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 

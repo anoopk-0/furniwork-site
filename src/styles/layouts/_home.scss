@@ -18,6 +18,8 @@
       }
 
       @media (max-width: $breakpoint-md) {
+        top: 30%;
+
         h1 {
           font-size: 2rem;
         }
@@ -173,6 +175,9 @@
       @media (max-width: $breakpoint-md) {
         @include grid-container($columns: 1, $gap: 2);
       }
+    }
+    @media (min-width: 1440px) and (max-width: 1919px) {
+      max-width: 1250px;
     }
   }
 }
