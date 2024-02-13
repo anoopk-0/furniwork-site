@@ -25,7 +25,10 @@ const NavBar = () => {
             <AiOutlineMenuUnfold />
           </div>
 
-          <div className="logo" onClick={() => navigate("/")}>
+          <div
+            className="logo"
+            onClick={() => navigate("/", { replace: true })}
+          >
             <img src={logo} alt="logo" />
           </div>
           <div className="menu">
