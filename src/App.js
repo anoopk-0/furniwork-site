@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Footer, NavBar, Home, Products } from "./layouts";
+import { Footer, NavBar, Home, Products, NotFound } from "./layouts";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <footer>
