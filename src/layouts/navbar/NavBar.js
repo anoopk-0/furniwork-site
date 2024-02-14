@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import logo from "../../assets/images/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink as Link, useNavigate } from "react-router-dom";
 
 const menu = [
   { to: "/products", name: "Products" },
@@ -14,8 +14,27 @@ const menu = [
 ];
 
 const NavBar = () => {
-  const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const menuRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsActive(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isActive) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive]);
 
   return (
     <>
@@ -47,9 +66,11 @@ const NavBar = () => {
         </div>
       </div>
       {isActive && (
-        <div className={`mobile-menu ${isActive ? "show" : ""}`}>
-          {menu.map((menu) => (
-            <div className="menu-item">{menu}</div>
+        <div className={`mobile-menu ${isActive ? "show" : ""}`} ref={menuRef}>
+          {menu.map((menuItem, index) => (
+            <div className="menu-item" key={index}>
+              <Link to={menuItem.to}>{menuItem.name}</Link>
+            </div>
           ))}
         </div>
       )}
