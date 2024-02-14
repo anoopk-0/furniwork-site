@@ -1,19 +1,40 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import logo from "../../assets/images/logo.svg";
+import { NavLink as Link, useNavigate } from "react-router-dom";
 
 const menu = [
-  "Products",
-  "Solutions",
-  "Resources",
-  "Knowledge",
-  "Stories",
-  "Work from Home",
+  { to: "/products", name: "Products" },
+  { to: "/solutions", name: "Solutions" },
+  { to: "/resources", name: "Resources" },
+  { to: "/knowledge", name: "Knowledge" },
+  { to: "/stories", name: "Stories" },
+  { to: "/work-from-home", name: "Work from Home" },
 ];
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const menuRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsActive(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isActive) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive]);
 
   return (
     <>
@@ -23,13 +44,18 @@ const NavBar = () => {
             <AiOutlineMenuUnfold />
           </div>
 
-          <div className="logo">
+          <div
+            className="logo"
+            onClick={() => navigate("/", { replace: true })}
+          >
             <img src={logo} alt="logo" />
           </div>
           <div className="menu">
             <ul>
               {menu?.map((menuItem, index) => (
-                <li key={index}>{menuItem}</li>
+                <li key={index}>
+                  <Link to={menuItem.to}>{menuItem.name}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -40,9 +66,11 @@ const NavBar = () => {
         </div>
       </div>
       {isActive && (
-        <div className={`mobile-menu ${isActive ? "show" : ""}`}>
-          {menu.map((menu) => (
-            <div className="menu-item">{menu}</div>
+        <div className={`mobile-menu ${isActive ? "show" : ""}`} ref={menuRef}>
+          {menu.map((menuItem, index) => (
+            <div className="menu-item" key={index}>
+              <Link to={menuItem.to}>{menuItem.name}</Link>
+            </div>
           ))}
         </div>
       )}

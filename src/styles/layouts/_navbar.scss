@@ -5,10 +5,13 @@
     @include container;
     @include flex-center;
     justify-content: space-between;
-    padding: 1rem 0;
 
     .md-menu {
       display: none;
+    }
+
+    .logo {
+      cursor: pointer;
     }
 
     @media (max-width: 1439px) {
@@ -35,6 +38,15 @@
       gap: 1.5rem;
       font-weight: 700;
       font-size: $large-font-size;
+
+      li {
+        padding: 1rem 0;
+
+        .active {
+          padding: 1rem 0;
+          border-bottom: 3px solid $danger-color;
+        }
+      }
     }
 
     @media (max-width: $breakpoint-md) {
